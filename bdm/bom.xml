@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="7.13.0">
     <businessObjects>
-        <businessObject qualifiedName="com.bonita.model.BusinessObject">
+        <businessObject qualifiedName="com.bonita.model.OdgovorNaZahtev">
+            <description>Entitet koji predstavlja odgovor agenta firmi na zahtev kupca.</description>
             <fields>
-                <field type="STRING" length="255" name="attribute" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="odustajanje" nullable="false" collection="false"/>
+                <field type="DOUBLE" length="255" name="cena" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="vremenskiRokZaIzvrsavanje" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.bonita.model.SifarnikKategorijaPosla">
+            <fields>
+                <field type="STRING" length="255" name="kategorijaPosla" nullable="false" collection="false"/>
+                <field type="TEXT" length="255" name="opis" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.bonita.model.ZahtevKupca">
+            <description>Entitet koji predstavlja zahtev kupca vezan za kategoriju posla(usluga) koja mu treba.</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.bonita.model.SifarnikKategorijaPosla" fetchType="LAZY" name="kategorijaPoslova" nullable="false" collection="false"/>
+                <field type="TEXT" length="255" name="opisPosla" nullable="false" collection="false"/>
+                <field type="DOUBLE" length="255" name="vrednost" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="rokZaPonude" nullable="false" collection="false"/>
+                <field type="INTEGER" length="255" name="brojOcekivanihPonuda" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="rokZaIzvrsavanje" nullable="false" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
