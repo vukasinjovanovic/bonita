@@ -12,6 +12,44 @@
             <queries/>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="com.bonita.model.PosaoIzvrsen">
+            <description>Entitet koji se odnosi na to da li je posao zavrsen i da se daju ocene.</description>
+            <fields>
+                <field type="BOOLEAN" length="255" name="posaoIzvrsen" nullable="false" collection="false"/>
+                <field type="DOUBLE" length="255" name="ocena" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.bonita.model.PrihvatanjePonude">
+            <description>Entitet koji sluzi kupcu za prihvatanje ponude firme i dodatne informacije.</description>
+            <fields>
+                <field type="BOOLEAN" length="255" name="prihvatanjePonude" nullable="false" collection="false"/>
+                <field type="TEXT" length="255" name="dodatneInformacije" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.bonita.model.Registracija">
+            <description>Entitet za registraciju fizickih/pravnih lica.</description>
+            <fields>
+                <field type="STRING" length="255" name="ime" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="email" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="username" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="password" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="adresa" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="mesto" nullable="false" collection="false"/>
+                <field type="LONG" length="255" name="postanskiBroj" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="firma" nullable="false" collection="false">
+                    <description>u zavisnosti da li je firma biralo bi se koju kategoriju posla ona obavlja.</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.bonita.model.SifarnikKategorijaPosla">
             <fields>
                 <field type="STRING" length="255" name="kategorijaPosla" nullable="false" collection="false"/>
